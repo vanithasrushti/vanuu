@@ -1,0 +1,14 @@
+import pandas as pd 
+import matplotlib.pyplot as plt
+df=pd.read_csv(r"C:\Users\pc11\Desktop\Book1.csv")
+#print(df)
+cylinder=df["cylinder"].value_counts().sort_index()
+plt.figure(figsize=(8,5))
+cylinder.plot(kind="bar",color="black")
+plt.title("Bar chart")
+plt.xlabel("number of cylinders")
+plt.ylabel("number of rows")
+plt.xticks(rotation=0)
+plt.grid(axis='y',linestyle='--',alpha=0.7)
+plt.tight_layout()
+plt.show()
